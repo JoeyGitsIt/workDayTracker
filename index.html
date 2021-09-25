@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css"/>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -32,121 +32,28 @@
       <!-- Timeblocks go here -->
 
       
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">this is stuff
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8">
-          </div>
-          <div class="col-md-2">
-             
-            <button type="button" class="btn btn-success">
-              Button
-            </button>
-          </div>
-        </div>
-      </div>
+    <main class="container-fluid">
+      <section class="row">
+        <time class="col-md-1 time-block hour"></time>
+        <textarea class="col-md-10 description past"></textarea>
+        <button type="button" class="col-md-1 saveBtn">
+          <i class="fas fa-save"></i>
+        </button>
+      </section>
+      <section class="row">
+        <time class="col-md-1 time-block"></time>
+        <textarea class="col-md-10 description"></textarea>
+        <button type="button" class="col-md-1 saveBtn">
+          <i class="fas fa-save"></i>
+        </button>
+      </section>
+    </main>
 
 
     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
