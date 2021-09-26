@@ -13,8 +13,9 @@ var textArea = $('textarea');
 
 
 // this might be a bad idea?
-var hourArray = [9, 10, 11, 12, 1, 2 ,3 ,4 ,5]
+// var hourArray = ['9am', 10, 11, 12, 1, 2 ,3 ,4 ,5];
 
+console.log
 // function displayHour () {
 //   for (var i = 0; i < hourArray.length; i++) {
 //     timeBox.textContent = hourArray[i] + "AM";
@@ -23,6 +24,7 @@ var hourArray = [9, 10, 11, 12, 1, 2 ,3 ,4 ,5]
 
 function init() {
   timeGet();
+  calendarStatus();
 }
 
 function timeGet () {
@@ -32,6 +34,7 @@ function timeGet () {
 
 function saveText () {
 // allows the save button to apply the text to the html element and save it to local storage
+
 }
 
 function rememberText () {
@@ -39,18 +42,29 @@ function rememberText () {
 }
 
 function calendarStatus () {
-  var verifyHour = moment().format('h');
-  var verifyNightDay = moment().format('a');
+  var timeGet = moment().format();
+  var verifyHour = timeGet.slice(11,13);
+  var getTimeInt = parseInt(verifyHour);
+  var hourArray = $('.row');
 
-  if (verifyNightDay == "am") {
-    // if (verifyHour == )
-  } else {
-    $(textarea).attr("class", "past");
-  }
-  console.log(verifyNightDay);
-  // looks at the time of day and marks the text area of each box gray, red, green based on the hour
-  // perhaps use moment.js moment.format('h'); to color boxes?
+  hourArray.each((_index, element) => {
+    var timeEleText = element.children[0].innerHTML;
+    var time = timeEleText.slice(0, timeEleText.length-2);
+    var displayedTimeInt = parseInt(time);
+
+    if (displayedTimeInt == getTimeInt || displayedTimeInt+12 == getTimeInt && displayedTimeInt <= 5) {
+      element.children[1].classList.add("present");
+    } 
+    else if (displayedTimeInt >= 9 && displayedTimeInt < getTimeInt) {
+      element.children[1].classList.add("past");
+    }
+    else if (displayedTimeInt <= 5 && displayedTimeInt+12 < getTimeInt) {
+      element.children[1].classList.add("past");
+    }
+    else {
+      element.children[1].classList.add("future");
+    }
+  });
 }
 
 init();
-calendarStatus();
