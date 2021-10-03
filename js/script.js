@@ -9,18 +9,8 @@ var saveButton = $('.saveBtn');
 var inputText = $('.description');
 var timeBox = $('.hour');
 var textArea = $('textarea');
+var hourArray = $('.row');
 
-
-
-// this might be a bad idea?
-// var hourArray = ['9am', 10, 11, 12, 1, 2 ,3 ,4 ,5];
-
-console.log
-// function displayHour () {
-//   for (var i = 0; i < hourArray.length; i++) {
-//     timeBox.textContent = hourArray[i] + "AM";
-//   }
-// }
 
 function init() {
   timeGet();
@@ -33,11 +23,24 @@ function timeGet () {
 }
 
 function saveText () {
-// allows the save button to apply the text to the html element and save it to local storage
 
+// allows the save button to apply the text to the html element and save it to local storage
+  var textToSave = {
+    time: timeBox.children.innerHTML,
+    text: textArea.value
+  }
+
+  // localStorage.setItem()
+  // var timeEleText = hourArray.children[0].innerHTML;   
+  console.log(timeBox[0].innerHTML);
+  console.log(textArea[0].value);
+  // console.log(hourArray.value);
+  // var storedText = {
+
+  // }
 }
 
-function rememberText () {
+function renderText () {
 // remembers the text from previous session and autofills it
 }
 
@@ -45,7 +48,6 @@ function calendarStatus () {
   var timeGet = moment().format();
   var verifyHour = timeGet.slice(11,13);
   var getTimeInt = parseInt(verifyHour);
-  var hourArray = $('.row');
 
   hourArray.each((_index, element) => {
     var timeEleText = element.children[0].innerHTML;
@@ -68,3 +70,4 @@ function calendarStatus () {
 }
 
 init();
+saveButton.click(saveText);
