@@ -4,3 +4,4 @@ Description: Website that displays typical working hours for the day, allows for
 
 https://joeygitsit.github.io/workDayTracker/
 
+![Screenshot](./assets/screenshot.png)
